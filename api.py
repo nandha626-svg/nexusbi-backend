@@ -2,8 +2,10 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from pipeline import ask_question
+from startup import init_database
 import duckdb
 from datetime import datetime
+init_database()
 
 app = FastAPI(
     title="RAG BI Chatbot API",
